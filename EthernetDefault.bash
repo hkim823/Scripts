@@ -1,0 +1,2 @@
+#!/bin/bash
+echo networksetup -ordernetworkservices "Ethernet" `networksetup -listallnetworkservices | grep -v 'An asterisk ' |  sed s/\^'*'// | grep -v Ethernet | sed 's/.*/\"&\"/' | tr '\n' ' '` | bash
